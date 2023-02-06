@@ -1,6 +1,12 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Postaus
 # Create your views here.
 def postaukset(request):
-    return render(request, 'blogi/postauslista.html')
+    postaukset = Postaus.objects.all()
+    context = {'postaukset': postaukset}
+    return render(request, 'blogi/postauslista.html', context)
+
+def nayta_postaus(request):
+    return render(request, 'blogi/postaus.html')
     

@@ -20,5 +20,6 @@ from blogi import views as blogi_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('postaukset/', blogi_views.postaukset)
+    path('postaukset/', blogi_views.postaukset),
+    path('postaus/int:id>', blogi_views.nayta_postaus)
 ]
