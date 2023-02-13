@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <titele>Koodausblogi</titele>
+    </head>
+    <body>
+        <h1>Koodausblogi - Postaukset</h1>
+        <form method="post">
+            {% csrf_token %}
+            <label>
+                Otsikko
+                <input name = "otsikko">
+            </label>
+            <button type="submit">Lähetä</button>
+
+        </form>
+        <a href="{% url 'postauslista' %}">Postaukset</a>    
+    </body>
+
+
+</html>
