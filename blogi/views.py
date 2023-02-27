@@ -30,7 +30,7 @@ def uusi_postaus(request):
         )
         # Muodostaa URL-osoite luotun Postaus-objektiin
         url = reverse('nayta_postaus', args=(postaus.id,))
-        # Palautetaan uudelleenohjaus uudeen Postaus-objektin URL:iin
+        # Palautetaan uudelleenohjaus uudeen Postaus-objektin URL:iin 
         return redirect(url)
 
     
