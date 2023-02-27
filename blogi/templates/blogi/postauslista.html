@@ -10,7 +10,7 @@
     <body>
         <nav class="navbar navbar-expand-md bg-body-tertiary">
             <div class="container-fluid">
-              <a class="navbar-brand" href="#">Koodausblogi</a>
+              <a class="navbar-brand" href="{% url 'postauslista' %}">Koodausblogi</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" 
               aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -28,7 +28,7 @@
                       Dropdown
                     </a>
                     <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="{% url 'uusi postaus %'}">Uusi postaus</a></li>
+                      <li><a class="dropdown-item" href="{% url 'uusi_postaus' %}">Uusi postaus</a></li>
                      
                     </ul>
                   </li>
@@ -37,7 +37,7 @@
             </div>
           </nav>
             <div class ="container-md">
-            <h1>Koodausblogi - Postaukset</h1>
+            <h1>Postaukset</h1>
             <a href="{% url 'admin:index' %}">Django Admin</a>
             <br>
             <a href="{% url 'uusi_postaus' %}">Uusi Postaus</a>
