@@ -1,8 +1,5 @@
-<html>
-    <head>
-        <titele>Koodausblogi</titele>
-    </head>
-    <body>
+{% extends "blogi/base.html" %}
+{% block content %}
         <h1>Koodausblogi - Postaukset</h1>
         <form method="post">
             {% csrf_token %}
@@ -21,7 +18,4 @@
 
         </form>
         <a href="{% url 'postauslista' %}">Postaukset</a>    
-    </body>
-
-
-</html>
+{% endblock %}
