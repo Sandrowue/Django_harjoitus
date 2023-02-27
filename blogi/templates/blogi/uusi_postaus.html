@@ -4,7 +4,11 @@
         <form method="post">
             {% csrf_token %}
            
+            {# Luo rivit ja sarakkeet, jotta saadaan lomake kapeammaksi ilolla näytöllä #}
             <div class="row">
+             {# col 12 = oletuksena tämä sarake on leveyteltään 12 osaa 12:sta (100%) #} 
+             {# jos näyttö on leveämpi kun small niin leveys on 10/12 (n.83%) #}
+             {# jos näyttö on leveämpi kun medium niin leveys on 8/12 (n.66%) ... #}
              <div class="col-12 col-sm-10 col-md-8 col-lg-6">
                 <div class="form mb-5">
 
