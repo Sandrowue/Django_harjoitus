@@ -1,21 +1,28 @@
 {% extends "blogi/base.html" %}
 {% block content %}
-        <h1>Koodausblogi - Postaukset</h1>
+        <h1>Uusi Postaus</h1>
         <form method="post">
             {% csrf_token %}
-            <label>
-                Otsikko
-                <input name = "otsikko">
+           
+            <div class="row">
+             <div class="col-12 col-sm-10 col-md-8 col-lg-6">
+                <div class="form mb-5">
 
-            </label>
-            <br>
-            <label>
-                teksti
-                <textarea name="teksti"></textarea>
-            </label>
-            <br>
-            <button type="submit">Lähetä</button>
+                <label for="otsikko" class="form-label">Otsikko</label>
+                <input class="form-control" id="otsikko" name="otsikko">
+              </div>
+              <div class="mb-3">
+                <label for="teksti" class="form-label">Teksti</label>
+                <textarea name="teksti" class="form-control" id="teksti" style="height: 10cm;"></textarea>
 
-        </form>
-        <a href="{% url 'postauslista' %}">Postaukset</a>    
-{% endblock %}
+              
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+            </div>
+            </div>
+            </form>
+
+
+
+    {% endblock %}
