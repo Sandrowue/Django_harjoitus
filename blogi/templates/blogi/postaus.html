@@ -1,18 +1,26 @@
 {% extends "blogi/base.html" %}
 {% block content %}
-        <h1>{{postaus.otsikko}}</h1>
-        
-        <p>
-            {{postaus.teksti}}
-    
-        </p>
-        
-        <a href="{% url 'postauslista' %}">Postaukset</a>    
+<h1>{{postaus.otsikko}}</h1>
+
+<p>
+    {{postaus.teksti}}
+
+</p>
+
+<a href="{% url 'postauslista' %}">Postaukset</a>         
+
+{# Lisää sivulle <img>-tagi kuvaa varten, jos postauksella on kuva #}
+{% if postaus.kuva %}
+<img src="{{postaus.kuv.url}}"/>
+{% endif %}
 
 {% endblock %}
  
-{# kommentti #}
-{% montrivinen
-   kommetti% }
-<!--html kommentti
-voi olla monirivinen-->
+
+
+
+
+
+
+
+>
