@@ -1,18 +1,26 @@
 {% extends "blogi/base.html" %}
 {% block content %}
-            <h1>Postaukset</h1>
-            <a href="{% url 'admin:index' %}">Django Admin</a>
-            <br>
-            <a href="{% url 'uusi_postaus' %}">Uusi Postaus</a>
-            <hr>
-            <ul>
-                {% for postaus in postaukset %}
-                
-                <li><a href="{% url 'nayta_postaus' postaus.id %}">
-                    {{postaus}}        
-                </a>
-            </li>
-                {% endfor %}
-            </ul>
+<h1>Postaukset</h1>
+
+<div class="row row-cols-1 row-cols-md-2 g-4">
+    {% for postaus in postaukset %}
+ 
+    <div class="col">
+      <div class="card">
+        {% if postaus.kuva %}
+        <a href="{% url 'nayta_postaus' postaus.id %}">
+          <img src="{{postaus.kuva.url}}" class="card-img-top" alt="...">
+        </a>
+        {% endif %}
+        <div class="card-body">
+          <h5 class="card-title">{{postaus.otsikko}}</h5>
+          <p class="card-text">{{postaus.teksti}}</p>
+          <p class="card-text">{{postaus.luo_ingressi}}</p>
+          <a href="{% url 'nayta_postaus' postaus.id %}" class="btn btn-primary">Näytä</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+    <div>
 {% endblock %}
             
