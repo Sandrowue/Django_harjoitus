@@ -49,3 +49,12 @@ saada myös tietokantaan.  Tähän käytetään migraatiotiedostoja. Tehtyjen
 muutosten pohjalta voi luoda uuden migraatiotiedoston komennolla:
 
 python manage.py makemigrations
+
+
+
+
+{# kommentti #}
+{% montrivinen
+   kommetti% }
+<!--html kommentti
+voi olla monirivinen--
