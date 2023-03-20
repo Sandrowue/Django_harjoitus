@@ -125,7 +125,18 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
     # and creating unique names for each version so they can safely be cached forever.
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
+# Käytä DropBoxia tiedostojen tallentamiseen jos DROPBOX_APP_KEY on asetettu
+DROPBOX_APP_KEY = os.environ.get('DROPBOX_APP_KEY')
+if DROPBOX_APP_KEY:
+    # Loput DropBox-muuttujat haetaan os.environ:sta hakasuluilla [],
+    # jotta niiden puuttuminen aiheuttaisi virheen hyvin aikaisessa
+    # vaiheessa. Jos käytettäisiin .get():iä, niin virhettä ei tulisi
+    DROPBOX_APP_SECRET = os.environ.get('DROPBOX_APP_SECRET')
+    DROPBOX_OAUTH2_TOKEN = os.environ.get('DROPBOX_OAUTH2_TOKEN')
+    DROPBOX_OAUTH2_REFRESH_TOKEN = os.environ.get('DROPBOX_OAUTH2_REFRESH_TOKEN')
+    DEFAULT_FILE_STORAGE = 'storages.backends.dropbox.DropBoxStorage'  
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
